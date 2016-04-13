@@ -5,9 +5,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "centos-6.6"
   config.vm.box_url = "https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.0.0/centos-6.6-x86_64.box"
 
-  config.vm.hostname = "elasticsearch.dev"
-  config.vm.network "private_network", ip: "192.168.33.20"
-
   config.vm.provision "shell", inline: <<-SHELL
     sudo rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6
     sudo yum -y install http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
