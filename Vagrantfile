@@ -12,6 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	sudo yum -y install jq
 	sudo service docker start
 	export DOCKER_HOST=unix:///var/run/docker.sock
+	sudo docker pull elasticsearch
 	sudo docker run -d -p 9200:9200 -p 9300:9200 -v "$PWD/esdata":/usr/share/elasticsearch/data elasticsearch
   SHELL
 
